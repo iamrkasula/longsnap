@@ -1,0 +1,89 @@
+/* Longsnap site. Matches the app: Tailwind zinc surfaces, amber-400 accent (Views/Theme.swift). Google Sans (SIL OFL 1.1,
+   assets/GoogleSans-OFL.txt), self-hosted so the site makes no third-party requests. */
+@font-face {
+  font-family: "Google Sans";
+  src: url("assets/GoogleSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --bg: #09090b;
+  --bg-raised: #18181b;
+  --surface: #27272a;
+  --line: #3f3f46;
+  --text: #f4f4f5;
+  --text-2: #d4d4d8;
+  --text-3: #a1a1aa;
+  --accent: #fbbf24;
+  --on-accent: #09090b;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 0;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 20px; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+nav a { color: var(--text-2); text-decoration: none; margin-left: 20px; font-size: 15px; }
+nav a:hover { color: var(--text); }
+
+.hero {
+  text-align: center; padding: 56px 0 24px;
+  background: radial-gradient(60% 50% at 50% 30%, rgba(251, 191, 36, 0.12), transparent 70%);
+}
+.hero img.icon { width: 120px; height: 120px; border-radius: 27px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5); }
+.hero h1 {
+  font-family: "Google Sans", -apple-system, sans-serif;
+  font-size: clamp(36px, 7vw, 64px); line-height: 1.08; margin: 28px 0 14px; letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p.lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--text-2); max-width: 640px; margin: 0 auto; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+.badges li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 15px; color: var(--text-2); }
+.cta { display: inline-block; margin-top: 30px; background: var(--accent); color: var(--on-accent); font-weight: 700; padding: 14px 28px; border-radius: 14px; text-decoration: none; }
+.cta.soon { background: var(--surface); color: var(--text-2); border: 1px solid var(--line); }
+
+.shots {
+  display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 36px 20px 20px; margin: 0 -20px;
+}
+.shots img { width: 240px; flex: none; border-radius: 22px; scroll-snap-align: center; border: 1px solid var(--line); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding: 40px 0; }
+.card { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.card h3 { margin: 0 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--text-2); font-size: 16px; }
+
+.doc { max-width: 760px; padding: 24px 0 56px; }
+.doc h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.15; margin: 20px 0 6px; }
+.doc .updated { color: var(--text-3); margin: 0 0 28px; }
+.doc h2 { font-size: 22px; margin: 36px 0 8px; }
+.doc p, .doc li { color: var(--text-2); }
+.doc details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 10px 0; }
+.doc summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.doc details p { margin: 10px 0 0; }
+
+footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--text-3); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+footer a { color: var(--text-3); }
+
+@media (max-width: 520px) {
+  nav a { margin-left: 14px; }
+  .shots img { width: 200px; }
+}
